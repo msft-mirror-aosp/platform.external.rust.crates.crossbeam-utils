@@ -9,6 +9,8 @@ const THREADS: usize = 10;
 const SMALL_STACK_SIZE: usize = 20;
 
 #[test]
+// Android aborts on panic and this test relies on stack unwinding.
+#[cfg(not(target_os = "android"))]
 fn join() {
     let counter = AtomicUsize::new(0);
     thread::scope(|scope| {
@@ -64,6 +66,8 @@ fn counter_builder() {
 }
 
 #[test]
+// Android aborts on panic and this test relies on stack unwinding.
+#[cfg(not(target_os = "android"))]
 fn counter_panic() {
     let counter = AtomicUsize::new(0);
     let result = thread::scope(|scope| {
@@ -84,6 +88,8 @@ fn counter_panic() {
 }
 
 #[test]
+// Android aborts on panic and this test relies on stack unwinding.
+#[cfg(not(target_os = "android"))]
 fn panic_twice() {
     let result = thread::scope(|scope| {
         scope.spawn(|_| {
@@ -108,6 +114,8 @@ fn panic_twice() {
 }
 
 #[test]
+// Android aborts on panic and this test relies on stack unwinding.
+#[cfg(not(target_os = "android"))]
 fn panic_many() {
     let result = thread::scope(|scope| {
         scope.spawn(|_| panic!("deliberate panic #1"));
