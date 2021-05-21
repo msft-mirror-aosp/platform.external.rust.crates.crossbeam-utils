@@ -218,9 +218,9 @@ rust_library {
 // dependent_library ["feature_list"]
 //   autocfg-1.0.1
 //   cfg-if-1.0.0
-//   getrandom-0.2.2 "std"
+//   getrandom-0.2.3 "std"
 //   lazy_static-1.4.0
-//   libc-0.2.93
+//   libc-0.2.94
 //   ppv-lite86-0.2.10 "simd,std"
 //   rand-0.8.3 "alloc,default,getrandom,libc,rand_chacha,rand_hc,std,std_rng"
 //   rand_chacha-0.3.0 "std"
