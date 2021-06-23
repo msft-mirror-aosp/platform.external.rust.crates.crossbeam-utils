@@ -27,6 +27,12 @@
     },
     {
       "name": "crossbeam-utils_device_test_tests_wait_group"
+    },
+    {
+      "name": "unicode-xid_device_test_src_lib"
+    },
+    {
+      "name": "unicode-xid_device_test_tests_exhaustive_tests"
     }
   ]
 }
