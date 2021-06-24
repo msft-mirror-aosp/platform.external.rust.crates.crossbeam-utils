@@ -46,6 +46,8 @@ fn frob() {
 }
 
 #[test]
+// Android aborts on panic and this test relies on stack unwinding.
+#[cfg(not(target_os = "android"))]
 fn arc_poison_wr() {
     let arc = Arc::new(ShardedLock::new(1));
     let arc2 = arc.clone();
@@ -58,6 +60,8 @@ fn arc_poison_wr() {
 }
 
 #[test]
+// Android aborts on panic and this test relies on stack unwinding.
+#[cfg(not(target_os = "android"))]
 fn arc_poison_ww() {
     let arc = Arc::new(ShardedLock::new(1));
     assert!(!arc.is_poisoned());
@@ -72,6 +76,8 @@ fn arc_poison_ww() {
 }
 
 #[test]
+// Android aborts on panic and this test relies on stack unwinding.
+#[cfg(not(target_os = "android"))]
 fn arc_no_poison_rr() {
     let arc = Arc::new(ShardedLock::new(1));
     let arc2 = arc.clone();
@@ -84,6 +90,8 @@ fn arc_no_poison_rr() {
     assert_eq!(*lock, 1);
 }
 #[test]
+// Android aborts on panic and this test relies on stack unwinding.
+#[cfg(not(target_os = "android"))]
 fn arc_no_poison_sl() {
     let arc = Arc::new(ShardedLock::new(1));
     let arc2 = arc.clone();
@@ -135,10 +143,12 @@ fn arc() {
 }
 
 #[test]
+// Android aborts on panic and this test relies on stack unwinding.
+#[cfg(not(target_os = "android"))]
 fn arc_access_in_unwind() {
     let arc = Arc::new(ShardedLock::new(1));
     let arc2 = arc.clone();
-    let _ = thread::spawn(move || -> () {
+    let _ = thread::spawn(move || {
         struct Unwinder {
             i: Arc<ShardedLock<isize>>,
         }
@@ -176,11 +186,8 @@ fn try_write() {
     let write_result = lock.try_write();
     match write_result {
         Err(TryLockError::WouldBlock) => (),
-        Ok(_) => assert!(
-            false,
-            "try_write should not succeed while read_guard is in scope"
-        ),
-        Err(_) => assert!(false, "unexpected error"),
+        Ok(_) => panic!("try_write should not succeed while read_guard is in scope"),
+        Err(_) => panic!("unexpected error"),
     }
 
     drop(read_guard);
@@ -211,6 +218,8 @@ fn test_into_inner_drop() {
 }
 
 #[test]
+// Android aborts on panic and this test relies on stack unwinding.
+#[cfg(not(target_os = "android"))]
 fn test_into_inner_poison() {
     let m = Arc::new(ShardedLock::new(NonCopy(10)));
     let m2 = m.clone();
@@ -235,6 +244,8 @@ fn test_get_mut() {
 }
 
 #[test]
+// Android aborts on panic and this test relies on stack unwinding.
+#[cfg(not(target_os = "android"))]
 fn test_get_mut_poison() {
     let m = Arc::new(ShardedLock::new(NonCopy(10)));
     let m2 = m.clone();
