@@ -51,12 +51,6 @@ rust_defaults {
         "lazy_static",
         "std",
     ],
-    cfgs: [
-        "has_atomic_u16",
-        "has_atomic_u32",
-        "has_atomic_u64",
-        "has_atomic_u8",
-    ],
     rustlibs: [
         "libcfg_if",
         "liblazy_static",
@@ -87,12 +81,6 @@ rust_defaults {
         "default",
         "lazy_static",
         "std",
-    ],
-    cfgs: [
-        "has_atomic_u16",
-        "has_atomic_u32",
-        "has_atomic_u64",
-        "has_atomic_u8",
     ],
     rustlibs: [
         "libcfg_if",
@@ -203,12 +191,6 @@ rust_library {
         "lazy_static",
         "std",
     ],
-    cfgs: [
-        "has_atomic_u16",
-        "has_atomic_u32",
-        "has_atomic_u64",
-        "has_atomic_u8",
-    ],
     rustlibs: [
         "libcfg_if",
         "liblazy_static",
@@ -216,12 +198,11 @@ rust_library {
 }
 
 // dependent_library ["feature_list"]
-//   autocfg-1.0.1
 //   cfg-if-1.0.0
-//   getrandom-0.2.2 "std"
+//   getrandom-0.2.3 "std"
 //   lazy_static-1.4.0
-//   libc-0.2.93
+//   libc-0.2.97
 //   ppv-lite86-0.2.10 "simd,std"
-//   rand-0.8.3 "alloc,default,getrandom,libc,rand_chacha,rand_hc,std,std_rng"
-//   rand_chacha-0.3.0 "std"
-//   rand_core-0.6.2 "alloc,getrandom,std"
+//   rand-0.8.4 "alloc,default,getrandom,libc,rand_chacha,rand_hc,std,std_rng"
+//   rand_chacha-0.3.1 "std"
+//   rand_core-0.6.3 "alloc,getrandom,std"
