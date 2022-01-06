@@ -39,14 +39,18 @@ license {
     ],
 }
 
-rust_defaults {
-    name: "crossbeam-utils_test_defaults",
+rust_test {
+    name: "crossbeam-utils_test_src_lib",
+    host_supported: true,
     crate_name: "crossbeam_utils",
-    srcs: ["src/lib.rs"],
     cargo_env_compat: true,
     cargo_pkg_version: "0.8.5",
+    srcs: ["src/lib.rs"],
     test_suites: ["general-tests"],
     auto_gen_config: true,
+    test_options: {
+        unit_test: true,
+    },
     edition: "2018",
     features: [
         "default",
@@ -60,21 +64,8 @@ rust_defaults {
     ],
 }
 
-rust_test_host {
-    name: "crossbeam-utils_host_test_src_lib",
-    defaults: ["crossbeam-utils_test_defaults"],
-    test_options: {
-        unit_test: true,
-    },
-}
-
-rust_test {
-    name: "crossbeam-utils_device_test_src_lib",
-    defaults: ["crossbeam-utils_test_defaults"],
-}
-
 rust_defaults {
-    name: "crossbeam-utils_test_defaults_crossbeam_utils",
+    name: "crossbeam-utils_test_defaults",
     crate_name: "crossbeam_utils",
     cargo_env_compat: true,
     cargo_pkg_version: "0.8.5",
@@ -94,9 +85,10 @@ rust_defaults {
     ],
 }
 
-rust_test_host {
-    name: "crossbeam-utils_host_test_tests_atomic_cell",
-    defaults: ["crossbeam-utils_test_defaults_crossbeam_utils"],
+rust_test {
+    name: "crossbeam-utils_test_tests_atomic_cell",
+    defaults: ["crossbeam-utils_test_defaults"],
+    host_supported: true,
     srcs: ["tests/atomic_cell.rs"],
     test_options: {
         unit_test: true,
@@ -104,14 +96,9 @@ rust_test_host {
 }
 
 rust_test {
-    name: "crossbeam-utils_device_test_tests_atomic_cell",
-    defaults: ["crossbeam-utils_test_defaults_crossbeam_utils"],
-    srcs: ["tests/atomic_cell.rs"],
-}
-
-rust_test_host {
-    name: "crossbeam-utils_host_test_tests_cache_padded",
-    defaults: ["crossbeam-utils_test_defaults_crossbeam_utils"],
+    name: "crossbeam-utils_test_tests_cache_padded",
+    defaults: ["crossbeam-utils_test_defaults"],
+    host_supported: true,
     srcs: ["tests/cache_padded.rs"],
     test_options: {
         unit_test: true,
@@ -119,14 +106,9 @@ rust_test_host {
 }
 
 rust_test {
-    name: "crossbeam-utils_device_test_tests_cache_padded",
-    defaults: ["crossbeam-utils_test_defaults_crossbeam_utils"],
-    srcs: ["tests/cache_padded.rs"],
-}
-
-rust_test_host {
-    name: "crossbeam-utils_host_test_tests_parker",
-    defaults: ["crossbeam-utils_test_defaults_crossbeam_utils"],
+    name: "crossbeam-utils_test_tests_parker",
+    defaults: ["crossbeam-utils_test_defaults"],
+    host_supported: true,
     srcs: ["tests/parker.rs"],
     test_options: {
         unit_test: true,
@@ -134,14 +116,9 @@ rust_test_host {
 }
 
 rust_test {
-    name: "crossbeam-utils_device_test_tests_parker",
-    defaults: ["crossbeam-utils_test_defaults_crossbeam_utils"],
-    srcs: ["tests/parker.rs"],
-}
-
-rust_test_host {
-    name: "crossbeam-utils_host_test_tests_sharded_lock",
-    defaults: ["crossbeam-utils_test_defaults_crossbeam_utils"],
+    name: "crossbeam-utils_test_tests_sharded_lock",
+    defaults: ["crossbeam-utils_test_defaults"],
+    host_supported: true,
     srcs: ["tests/sharded_lock.rs"],
     test_options: {
         unit_test: true,
@@ -149,14 +126,9 @@ rust_test_host {
 }
 
 rust_test {
-    name: "crossbeam-utils_device_test_tests_sharded_lock",
-    defaults: ["crossbeam-utils_test_defaults_crossbeam_utils"],
-    srcs: ["tests/sharded_lock.rs"],
-}
-
-rust_test_host {
-    name: "crossbeam-utils_host_test_tests_thread",
-    defaults: ["crossbeam-utils_test_defaults_crossbeam_utils"],
+    name: "crossbeam-utils_test_tests_thread",
+    defaults: ["crossbeam-utils_test_defaults"],
+    host_supported: true,
     srcs: ["tests/thread.rs"],
     test_options: {
         unit_test: true,
@@ -164,24 +136,13 @@ rust_test_host {
 }
 
 rust_test {
-    name: "crossbeam-utils_device_test_tests_thread",
-    defaults: ["crossbeam-utils_test_defaults_crossbeam_utils"],
-    srcs: ["tests/thread.rs"],
-}
-
-rust_test_host {
-    name: "crossbeam-utils_host_test_tests_wait_group",
-    defaults: ["crossbeam-utils_test_defaults_crossbeam_utils"],
+    name: "crossbeam-utils_test_tests_wait_group",
+    defaults: ["crossbeam-utils_test_defaults"],
+    host_supported: true,
     srcs: ["tests/wait_group.rs"],
     test_options: {
         unit_test: true,
     },
-}
-
-rust_test {
-    name: "crossbeam-utils_device_test_tests_wait_group",
-    defaults: ["crossbeam-utils_test_defaults_crossbeam_utils"],
-    srcs: ["tests/wait_group.rs"],
 }
 
 rust_library {
