@@ -29,35 +29,6 @@
       "path": "external/rust/crates/vulkano"
     }
   ],
-  "postsubmit": [
-    {
-      "name": "ZipFuseTest"
-    },
-    {
-      "name": "authfs_device_test_src_lib"
-    },
-    {
-      "name": "crossbeam-utils_test_src_lib"
-    },
-    {
-      "name": "crossbeam-utils_test_tests_atomic_cell"
-    },
-    {
-      "name": "crossbeam-utils_test_tests_cache_padded"
-    },
-    {
-      "name": "crossbeam-utils_test_tests_parker"
-    },
-    {
-      "name": "crossbeam-utils_test_tests_sharded_lock"
-    },
-    {
-      "name": "crossbeam-utils_test_tests_thread"
-    },
-    {
-      "name": "crossbeam-utils_test_tests_wait_group"
-    }
-  ],
   "presubmit": [
     {
       "name": "ZipFuseTest"
