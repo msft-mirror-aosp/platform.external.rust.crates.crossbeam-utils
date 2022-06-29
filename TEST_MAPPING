@@ -31,6 +31,12 @@
   ],
   "presubmit": [
     {
+      "name": "ZipFuseTest"
+    },
+    {
+      "name": "authfs_device_test_src_lib"
+    },
+    {
       "name": "crossbeam-utils_test_src_lib"
     },
     {
@@ -53,6 +59,12 @@
     }
   ],
   "presubmit-rust": [
+    {
+      "name": "ZipFuseTest"
+    },
+    {
+      "name": "authfs_device_test_src_lib"
+    },
     {
       "name": "crossbeam-utils_test_src_lib"
     },
