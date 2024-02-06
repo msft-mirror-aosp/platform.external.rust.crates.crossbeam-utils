@@ -44,23 +44,19 @@ rust_test {
     host_supported: true,
     crate_name: "crossbeam_utils",
     cargo_env_compat: true,
-    cargo_pkg_version: "0.8.15",
+    cargo_pkg_version: "0.8.19",
     srcs: ["src/lib.rs"],
     test_suites: ["general-tests"],
     auto_gen_config: true,
     test_options: {
         unit_test: true,
     },
-    edition: "2018",
+    edition: "2021",
     features: [
         "default",
         "std",
     ],
-    rustlibs: [
-        "libcfg_if",
-        "librand",
-    ],
-    proc_macros: ["librustversion"],
+    rustlibs: ["librand"],
 }
 
 rust_test {
@@ -68,24 +64,22 @@ rust_test {
     host_supported: true,
     crate_name: "atomic_cell",
     cargo_env_compat: true,
-    cargo_pkg_version: "0.8.15",
+    cargo_pkg_version: "0.8.19",
     srcs: ["tests/atomic_cell.rs"],
     test_suites: ["general-tests"],
     auto_gen_config: true,
     test_options: {
         unit_test: true,
     },
-    edition: "2018",
+    edition: "2021",
     features: [
         "default",
         "std",
     ],
     rustlibs: [
-        "libcfg_if",
         "libcrossbeam_utils",
         "librand",
     ],
-    proc_macros: ["librustversion"],
 }
 
 rust_test {
@@ -93,24 +87,22 @@ rust_test {
     host_supported: true,
     crate_name: "cache_padded",
     cargo_env_compat: true,
-    cargo_pkg_version: "0.8.15",
+    cargo_pkg_version: "0.8.19",
     srcs: ["tests/cache_padded.rs"],
     test_suites: ["general-tests"],
     auto_gen_config: true,
     test_options: {
         unit_test: true,
     },
-    edition: "2018",
+    edition: "2021",
     features: [
         "default",
         "std",
     ],
     rustlibs: [
-        "libcfg_if",
         "libcrossbeam_utils",
         "librand",
     ],
-    proc_macros: ["librustversion"],
 }
 
 rust_test {
@@ -118,24 +110,22 @@ rust_test {
     host_supported: true,
     crate_name: "parker",
     cargo_env_compat: true,
-    cargo_pkg_version: "0.8.15",
+    cargo_pkg_version: "0.8.19",
     srcs: ["tests/parker.rs"],
     test_suites: ["general-tests"],
     auto_gen_config: true,
     test_options: {
         unit_test: true,
     },
-    edition: "2018",
+    edition: "2021",
     features: [
         "default",
         "std",
     ],
     rustlibs: [
-        "libcfg_if",
         "libcrossbeam_utils",
         "librand",
     ],
-    proc_macros: ["librustversion"],
 }
 
 rust_test {
@@ -143,24 +133,22 @@ rust_test {
     host_supported: true,
     crate_name: "sharded_lock",
     cargo_env_compat: true,
-    cargo_pkg_version: "0.8.15",
+    cargo_pkg_version: "0.8.19",
     srcs: ["tests/sharded_lock.rs"],
     test_suites: ["general-tests"],
     auto_gen_config: true,
     test_options: {
         unit_test: true,
     },
-    edition: "2018",
+    edition: "2021",
     features: [
         "default",
         "std",
     ],
     rustlibs: [
-        "libcfg_if",
         "libcrossbeam_utils",
         "librand",
     ],
-    proc_macros: ["librustversion"],
 }
 
 rust_test {
@@ -168,24 +156,22 @@ rust_test {
     host_supported: true,
     crate_name: "thread",
     cargo_env_compat: true,
-    cargo_pkg_version: "0.8.15",
+    cargo_pkg_version: "0.8.19",
     srcs: ["tests/thread.rs"],
     test_suites: ["general-tests"],
     auto_gen_config: true,
     test_options: {
         unit_test: true,
     },
-    edition: "2018",
+    edition: "2021",
     features: [
         "default",
         "std",
     ],
     rustlibs: [
-        "libcfg_if",
         "libcrossbeam_utils",
         "librand",
     ],
-    proc_macros: ["librustversion"],
 }
 
 rust_test {
@@ -193,24 +179,22 @@ rust_test {
     host_supported: true,
     crate_name: "wait_group",
     cargo_env_compat: true,
-    cargo_pkg_version: "0.8.15",
+    cargo_pkg_version: "0.8.19",
     srcs: ["tests/wait_group.rs"],
     test_suites: ["general-tests"],
     auto_gen_config: true,
     test_options: {
         unit_test: true,
     },
-    edition: "2018",
+    edition: "2021",
     features: [
         "default",
         "std",
     ],
     rustlibs: [
-        "libcfg_if",
         "libcrossbeam_utils",
         "librand",
     ],
-    proc_macros: ["librustversion"],
 }
 
 rust_library {
@@ -218,14 +202,13 @@ rust_library {
     host_supported: true,
     crate_name: "crossbeam_utils",
     cargo_env_compat: true,
-    cargo_pkg_version: "0.8.15",
+    cargo_pkg_version: "0.8.19",
     srcs: ["src/lib.rs"],
-    edition: "2018",
+    edition: "2021",
     features: [
         "default",
         "std",
     ],
-    rustlibs: ["libcfg_if"],
     apex_available: [
         "//apex_available:platform",
         "com.android.virt",
